@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+    <title>Clavamox Dosagem</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <img class="navbar_logo" src="assets/logo.svg" alt="">
+    </nav>
+    <div class="main_content">
+        <div class="main_text">
+            <h1>Calculador de dosagem</h1>
+            <p>Saiba a quantidade a administrar consoante o peso da criança. A dose representada tem como base a dose
+                individual de xx/mg/kg/dose (máximo 2x/dia).</p>
+        </div>
+        <div class="calculator">
+             <div class="xarope_dosagem_info_container">
+                <img class="toma" src="assets/toma.svg">
+                <img class="urso" src="assets/urso.svg">
+                <div itemprop="drugUnit" class="xarope_dosagem_info_total" id="xarope_dosagem_info_total">1,9</div>
+                <div itemprop="doseSchedule" class="xarope_dosagem_info_desc">ml de amoxicilina + ácido clavulânico 600
+                    (2x ao dia)</div>
+            </div>
+            <div class="xarope_dosagem_colheres_container"></div>
+            <div class="xarope_dosagem_slidecontainer">
+                <img id="spoon_image" src="assets/imagem_1.png"/>
+                <div class="xarope_dosagem_slidecontainer_kg" id="xarope_dosagem_kg">5</div>
+                <div class="xarope_dosagem_slidecontainer_desc">kg (peso da criança)</div>
+                <div class="slideContainer">
+                    <span id="output"></span>
+                    <!-- <input type="range" min="5" max="33" value="5" step="1" class="xarope_dosagem_slider" id="slider">  -->
+                    <input id="slider" min="5" max="33" type="range" value="5" class="xarope_dosagem_slider" />
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+var slider = document.getElementById("slider");
+var output = document.getElementById("xarope_dosagem_kg");
+output.innerHTML = slider.value;
+
+const array = [
+    { 'value' : 5, 'dose' : 1.9, image: 'assets/imagem_1.png'},
+    { 'value' : 6, 'dose' : 2.3, image: 'assets/imagem_2.png'},
+    { 'value' : 7, 'dose' : 2.6, image: 'assets/imagem_3.png'},
+    { 'value' : 8, 'dose' : 3.0, image: 'assets/imagem_4.png'},
+    { 'value' : 9, 'dose' : 3.4, image: 'assets/imagem_5.png'},
+    { 'value' : 10, 'dose' : 3.8, image: 'assets/imagem_6.png'},
+    { 'value' : 11, 'dose' : 4.1, image: 'assets/imagem_7.png'},
+    { 'value' : 12, 'dose' : 4.5, image: 'assets/imagem_8.png'},
+    { 'value' : 13, 'dose' : 4.9, image: 'assets/imagem_9.png'},
+    { 'value' : 14, 'dose' : 5.3, image: 'assets/imagem_10.png'},
+    { 'value' : 15, 'dose' : 5.6, image: 'assets/imagem_11.png'},
+    { 'value' : 16, 'dose' : 6.0, image: 'assets/imagem_12.png'},
+    { 'value' : 17, 'dose' : 6.4, image: 'assets/imagem_13.png'},
+    { 'value' : 18, 'dose' : 6.8, image: 'assets/imagem_14.png'},
+    { 'value' : 19, 'dose' : 7.1, image: 'assets/imagem_15.png'},
+    { 'value' : 20, 'dose' : 7.5, image: 'assets/imagem_16.png'},
+    { 'value' : 21, 'dose' : 7.9, image: 'assets/imagem_17.png'},
+    { 'value' : 22, 'dose' : 8.3, image: 'assets/imagem_18.png'},
+    { 'value' : 23, 'dose' : 8.6, image: 'assets/imagem_19.png'},
+    { 'value' : 24, 'dose' : 9.0, image: 'assets/imagem_20.png'},
+    { 'value' : 25, 'dose' : 9.4, image: 'assets/imagem_21.png'},
+    { 'value' : 26, 'dose' : 9.8, image: 'assets/imagem_22.png'},
+    { 'value' : 27, 'dose' : 10.1, image: 'assets/imagem_23.png'},
+    { 'value' : 28, 'dose' : 10.5, image: 'assets/imagem_24.png'},
+    { 'value' : 29, 'dose' : 10.9, image: 'assets/imagem_25.png'},
+    { 'value' : 30, 'dose' : 11.3, image: 'assets/imagem_26.png'},
+    { 'value' : 31, 'dose' : 11.6, image: 'assets/imagem_27.png'},
+    { 'value' : 32, 'dose' : 12.0, image: 'assets/imagem_28.png'},
+    { 'value' : 33, 'dose' : 12.5, image: 'assets/imagem_29.png'},
+];
+
+document.getElementById("slider").oninput = function() {
+  var value = (this.value-this.min)/(this.max-this.min)*100
+  this.style.background = 'linear-gradient(to right, #fff 0%, #fff ' + value + '%, #93C0D9 ' + value + '%, #93C0D9 100%)';
+  output.innerHTML = this.value; 
+  if(this.value == 33) {
+        output.innerHTML = '33-39';
+    }
+    else {
+        output.innerHTML = this.value;
+    }
+
+    array.forEach(element => {
+        if(this.value == element.value) {
+            console.log(element)
+            // show image
+            document.getElementById('spoon_image').src = element.image;
+
+            // set dose
+            document.getElementById('xarope_dosagem_info_total').innerHTML = element.dose;
+        }
+    });
+};
+
+</script>
+    
+</html>

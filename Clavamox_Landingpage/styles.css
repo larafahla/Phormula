@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url(assets/background.png) no-repeat center center fixed;
+    background-size: cover;
+    /* overflow: hidden; */
+}
+
+.navbar {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 60px;
+}
+
+.navbar_logo {
+    margin: 25px 0 0 40px;
+}
+
+.main_content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.main_text {
+    flex-direction: column;
+    width: 40%;
+}
+
+h1 {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 54px;
+    font-weight: 700;
+    color: #005280;
+}
+
+p {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 20px;
+    color: #005280;
+}
+
+.calculator {
+    width: 600px;
+    height: 481px;
+    background-color: rgba(255, 255, 255, 0.324);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.xarope_dosagem_info_container {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.xarope_dosagem_info_total {
+    font-size: 40px;
+    font-family: 'Work Sans', sans-serif;
+    color: #005280;
+    font-weight: 700;
+}
+
+.xarope_dosagem_info_desc {
+    font-size: 14px;
+    font-family: 'Work Sans', sans-serif;
+    color: #005280;
+}
+
+.xarope_dosagem_slidecontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 16px;
+}
+
+#slider {
+    background-color: #93C0D9;
+}
+
+.xarope_dosagem_slidecontainer_kg {
+    color: #005280;
+    font-size: 40px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 700;
+}
+
+.xarope_dosagem_slidecontainer_desc {
+    color: #005280;
+    font-size: 26px;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.slideContainer {
+    margin-top: 20px;
+    width: 25em;
+    text-align: center;
+}
+
+#slider {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 11px;
+    width: 100%;
+    border-radius: 5px;
+    /* background-image: linear-gradient(#fff, #fff); */
+    outline: none;
+    margin-bottom: 14px;
+    margin-top: 14px;
+}
+
+#slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #ffffff;
+    cursor: pointer;
+}
+
+#slider::-moz-range-thumb {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+#output {
+    color: #005280;
+    font-family: 'Work Sans', sans-serif;
+    letter-spacing: 1.5px;
+    font-size: 40px;
+    font-weight: 700;
+    margin-left: 5px;
+}
+
+#myinput {
+    background: linear-gradient(to right, #fff 0%, #fff 0%, #93C0D9 0%, #93C0D9 100%);
+    border-radius: 8px;
+    height: 11px;
+    width: 374px;
+    outline: none;
+    transition: background 450ms ease-in;
+    appearance: none;
+  }
+
+#spoon_image {
+    margin-bottom: 40px;
+    margin: 0px 20px;
+    max-width: -webkit-fill-available;
+    max-height: 110px;
+    margin-bottom: 40px;
+  }
+
+.toma {
+    width: 130px;
+    position: absolute;
+    top: -30px;
+    right: -30px;
+}
+
+.urso {
+    width: 140px;
+    position: absolute;
+    bottom: -10px;
+    right: -50px;
+}
+
+@media screen and (max-width: 600px) {
+    .calculator {
+        width: 400px;
+        height: 481px;
+        background-color: rgba(255, 255, 255, 0.324);
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        margin: 0 30px 0 30px;
+    }
+    .navbar_logo {
+        margin: 15px 0 0 20px;
+    }
+    .main_text {
+        width: 90%;
+        margin-bottom: 90px;
+    }
+    .urso {
+        display: none;
+    }
+    .toma {
+        top: -50px;
+    }
+    #slider {
+        width: 80%;
+    }
+    h1 {
+        font-size: 42px;
+    }
+    .navbar {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .calculator {
+        width: 600px;
+        height: 481px;
+        background-color: rgba(255, 255, 255, 0.324);
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+    .navbar_logo {
+        margin: 15px 0 0 20px;
+    }
+    .main_text {
+        width: 90%;
+        margin-bottom: 90px;
+    }
+    .urso {
+        display: none;
+    }
+    .toma {
+        top: -50px;
+    }
+}
