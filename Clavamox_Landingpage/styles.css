@@ -184,7 +184,7 @@ p {
 
 @media screen and (max-width: 600px) {
     .calculator {
-        width: 100%;
+        width: 90%;
         height: 481px;
         background-color: rgba(255, 255, 255, 0.324);
         border-radius: 20px;
