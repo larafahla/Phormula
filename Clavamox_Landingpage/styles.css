@@ -216,6 +216,9 @@ p {
     .navbar {
         justify-content: center;
     }
+    .xarope_dosagem_info_container {
+        margin: 40px 20px 0px 20px;
+    }
 }
 
 @media screen and (max-width: 1000px) and (min-width: 601px) {
@@ -241,5 +244,8 @@ p {
     .toma {
         /*top: -50px;*/
         display: none;
+    }
+    .xarope_dosagem_info_container {
+        margin: 40px 20px 0px 20px;
     }
 }
