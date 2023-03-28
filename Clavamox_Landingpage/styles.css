@@ -50,6 +50,7 @@ p {
     margin-top: 20px;
     color: #005280;
     max-width: 85%;
+    line-height: 24px;
 }
 
 .calculator {
@@ -184,6 +185,13 @@ p {
 }
 
 @media screen and (max-width: 600px) {
+    .main_content {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
     .calculator {
         width: 90%;
         height: 430px;
