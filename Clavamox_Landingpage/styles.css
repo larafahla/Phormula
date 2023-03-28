@@ -184,13 +184,11 @@ p {
     right: -50px;
 }
 
+/* @media screen and () */
+
 @media screen and (max-width: 600px) {
     .main_content {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
         justify-content: space-around;
-        flex-wrap: wrap;
     }
     .calculator {
         width: 90%;
